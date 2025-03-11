@@ -16,7 +16,14 @@ The aligned output is in TextGrid format for input into many transcription platf
 
 # Steps to Run
 
-requirements.txt:
+## Create Docker image (easy):
+
+1. Build Docker image: `docker build -t auto-ipa-es:1.0.1` .
+2. Run Docker container from image: `docker run -it auto-ipa-es:1.0.1 sh`
+
+## Manual Installation:
+
+Install requirements.txt:
 ```
 pip install numpy==1.26.4
 pip install torch==2.4.0
@@ -31,7 +38,6 @@ pip install librosa==0.10.2
 pip install montreal-forced-aligner
 sudo apt install ffmpeg sox
 ```
-
 4. Install Phonetisaurus using instructions from [here](https://github.com/AdolfVonKleist/Phonetisaurus) to install with Python3 bindings.
 5. Run with `python3 transcribe.py <audio file>` (Note: the first time you run this, you will need to install whisper-large-v3 if you do not already have it which is a 3GB download)
 
